@@ -1,12 +1,13 @@
 language: android
 sudo: required
-jdk: oraclejdk8
+jdk:
+  - oraclejdk8
 
 env:
   global:
-  - ANDROID_API_LEVEL=33
-  - ANDROID_BUILD_TOOLS_VERSION=33.0.1
-  - ANDROID_ABI=armeabi-v7a
+    - ANDROID_API_LEVEL=33
+    - ANDROID_BUILD_TOOLS_VERSION=33.0.1
+    - ANDROID_ABI=armeabi-v7a
 
 android:
   components:
@@ -30,17 +31,67 @@ before_cache:
 
 cache:
   directories:
-  - $HOME/.gradle/caches/
-  - $HOME/.gradle/wrapper/
-  - $HOME/.android/build-cache
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
 
 before_script:
   - chmod +x gradlew
 
-script:
-  - jdk_switcher use oraclejdk11
-  - ./gradlew clean build
-  - ./gradlew test
+# script:
+#   - ./gradlew clean build
+
+jobs:
+  include:
+    - name: "Running with OpenJDK 11"
+      jdk: openjdk11
+      script:
+        - ./gradlew test
+
+# --------------------------------------------
+# language: android
+# sudo: required
+# jdk: oraclejdk8
+
+# env:
+#   global:
+#   - ANDROID_API_LEVEL=33
+#   - ANDROID_BUILD_TOOLS_VERSION=33.0.1
+#   - ANDROID_ABI=armeabi-v7a
+
+# android:
+#   components:
+#     - tools
+#     - platform-tools
+#     - tools
+#     - extra-android-m2repository
+#   licenses:
+#     - 'android-sdk-preview-license-52d11cd2'
+#     - 'android-sdk-license-.+'
+#     - 'google-gdk-license-.+'
+
+# before_install:
+#   - touch $HOME/.android/repositories.cfg
+#   - yes | sdkmanager "platforms;android-33"
+#   - yes | sdkmanager "build-tools;33.0.1"
+
+# before_cache:
+#   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+#   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+# cache:
+#   directories:
+#   - $HOME/.gradle/caches/
+#   - $HOME/.gradle/wrapper/
+#   - $HOME/.android/build-cache
+
+# before_script:
+#   - chmod +x gradlew
+
+# script:
+#   - jdk_switcher use oraclejdk11
+#   - ./gradlew clean build
+#   - ./gradlew test
 
 # ---------------------------------------------------------------------
 # language: android
