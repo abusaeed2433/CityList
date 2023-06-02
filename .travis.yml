@@ -22,7 +22,7 @@ android:
     - extra-android-m2repository
     #- sys-img-armeabi-v7a-android-22
  
- before_install:
+before_install:
   - yes | sdkmanager --update
   - yes | sdkmanager "platforms;android-33" "build-tools;30.0.3"
   - chmod +x gradlew
