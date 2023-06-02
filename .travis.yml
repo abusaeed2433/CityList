@@ -1,6 +1,6 @@
 language: android
 sudo: required
-jdk: oraclejdk11
+jdk: oraclejdk8
 
 env:
   global:
@@ -38,6 +38,7 @@ before_script:
   - chmod +x gradlew
 
 script:
+  - jdk_switcher use oraclejdk11
   - ./gradlew clean build
   - ./gradlew test
 
