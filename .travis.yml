@@ -1,10 +1,7 @@
 sudo: required
 language: android
 dist: trusty
-
-env:
-  global:
-    - JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+jdk: openjdk13
 
 android:
   licenses:
@@ -23,10 +20,6 @@ android:
     #- sys-img-armeabi-v7a-android-22
  
 before_install:
-  - wget https://download.oracle.com/java/17/archive/jdk-17.0.6_linux-x64_bin.tar.gz
-  - tar xzf jdk-17.0.6_linux-x64_bin.tar.gz
-  #- export JAVA_HOME=$PWD/jdk-17
-  #- export PATH=$JAVA_HOME/bin:$PATH
   - chmod +x gradlew
   #- yes | sdkmanager "platforms;android-30"
 
