@@ -49,7 +49,7 @@
 
 language: android
 dist: trusty
-jdk: openjdk8
+jdk: openjdk17
 
 android:
   components:
