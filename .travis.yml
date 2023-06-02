@@ -39,7 +39,8 @@ before_install:
 
 # Run your main script
 script:
-  - ./gradlew -PdisablePreDex
+#  - ./gradlew -PdisablePreDex
+  - ./gradlew build
 
 # sudo: required
 # language: android
@@ -77,8 +78,8 @@ script:
 
 # script:
 #   - ./gradlew clean build
-#   #- ./gradlew test
-#   #- ./gradlew build check
+#   - ./gradlew test
+#   - ./gradlew build check
 
 # before_cache:
 #   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
