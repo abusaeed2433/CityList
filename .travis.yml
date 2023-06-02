@@ -2,7 +2,6 @@ sudo: required
 language: android
 dist: trusty
 jdk:
-  - openjdk8
   - openjdk17
 
 android:
