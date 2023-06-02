@@ -21,6 +21,7 @@ android:
  
 before_install:
   - chmod +x gradlew
+  - export JAVA_OPTS="--add-modules java.xml.bind"
   - echo y | sdkmanager "platforms;android-33" "build-tools;30.0.3"
 
 before_script:
