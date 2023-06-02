@@ -49,7 +49,7 @@
 
 language: android
 dist: trusty
-jdk: openjdk17
+jdk: openjdk8
 
 android:
   licenses:
