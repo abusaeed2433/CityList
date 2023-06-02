@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button deleteButton = findViewById(R.id.button_clear);
-        deleteButton.setOnClickListener(v -> cityAdapter.clear());
+        deleteButton.setOnClickListener(v -> cityAdapter.clear())
 
     }
 
