@@ -19,14 +19,11 @@ android:
     - 'google-gdk-license-.+'
 
 before_install:
-  - mkdir "$ANDROID_HOME/cmdline-tools"
-  - wget -q https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip -O cmdline-tools.zip
-  - unzip -q cmdline-tools.zip -d "$ANDROID_HOME/cmdline-tools"
-  - mv "$ANDROID_HOME/cmdline-tools/cmdline-tools" "$ANDROID_HOME/cmdline-tools/latest"
-  - rm cmdline-tools.zip
-  - yes | sdkmanager --sdk_root="$ANDROID_HOME" "tools" "platforms;android-33" "build-tools;33.0.1"
+  - touch $HOME/.android/repositories.cfg
   - yes | sdkmanager "platforms;android-33"
   - yes | sdkmanager "build-tools;33.0.1"
+  - sudo apt-get install libjaxb-api-java
+  - sudo apt-get install libjaxb-java
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
