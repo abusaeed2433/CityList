@@ -104,8 +104,8 @@ android:
     #- sys-img-armeabi-v7a-android-22
  
 before_install:
-  - yes | sdkmanager --update
-  - yes | sdkmanager "platforms;android-33" "build-tools;30.0.3"
+#   - yes | sdkmanager --update
+#   - yes | sdkmanager "platforms;android-33" "build-tools;30.0.3"
   - chmod +x gradlew
 
 before_script:
