@@ -9,6 +9,9 @@ android:
     - build-tools-34.0.0
     - android-33
 
+before_script:
+  - echo y | android update sdk --no-ui --all --filter "android-33,build-tools-34.0.0"
+
 before_install:
   - mkdir "$ANDROID_HOME/licenses" || true
   - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
