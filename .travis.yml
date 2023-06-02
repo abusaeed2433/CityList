@@ -59,13 +59,11 @@ android:
     - '.+'
   components:
     - build-tools-30.0.3
-    - android-30
-
-before_install:
-  - sdkmanager "platforms;android-29" "build-tools;30.0.3"
+    - android-33
   
 before_install:
   - chmod +x gradlew
+  - yes | sdkmanager "platforms;android-33" "build-tools;30.0.3"
 
 script:
   - ./gradlew clean build
