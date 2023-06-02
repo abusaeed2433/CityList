@@ -52,6 +52,11 @@ dist: trusty
 jdk: openjdk17
 
 android:
+  licenses:
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
+    - '.+'
   components:
     - build-tools-30.0.3
     - android-30
