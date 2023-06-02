@@ -28,7 +28,7 @@ cache:
     - $HOME/.android/build-cacåhe
 
 script:
-  - ./gradlew test
+  - ./gradlew build
 
 
 # language: android
