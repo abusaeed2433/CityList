@@ -15,6 +15,7 @@ android:
     - tools
     - build-tools-34.0.0
     - android-33
+    - tools
     #- android-22
     - extra-google-google_play_services
     - extra-google-m2repository
