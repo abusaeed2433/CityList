@@ -21,10 +21,10 @@ android:
     - extra-android-m2repository
     #- sys-img-armeabi-v7a-android-22
  
-before_install:
-  - yes | sdkmanager --licenses
+ before_install:
+  - yes | sdkmanager --update
+  - yes | sdkmanager "platforms;android-33" "build-tools;30.0.3"
   - chmod +x gradlew
-  - echo y | sdkmanager "platforms;android-33" "build-tools;30.0.3"
 
 before_script:
   #- echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
