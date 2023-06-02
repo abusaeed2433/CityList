@@ -21,6 +21,9 @@ android:
     - extra-android-m2repository
 
 before_install:
+  - sudo apt-get install libjaxb-api-java
+  - sudo apt-get install libjaxb-java
+  - export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
   - mkdir -p $ANDROID_HOME
   - echo y | sdkmanager "platforms;android-33" "build-tools;34.0.0"
 
