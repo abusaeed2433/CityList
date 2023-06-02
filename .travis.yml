@@ -6,7 +6,7 @@ jdk:
 
 env:
   global:
-    - ANDROID_HOME=$HOME/android-sdk
+    - ANDROID_HOME=D:/Android/Sdk
     - PATH=$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
 
 android:
@@ -22,7 +22,6 @@ android:
 
 before_install:
   - mkdir -p $ANDROID_HOME
-  - cp -R $TRAVIS_BUILD_DIR/android-sdk-linux/* $ANDROID_HOME/
   - echo y | sdkmanager "platforms;android-33" "build-tools;34.0.0"
 
 before_script:
