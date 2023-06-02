@@ -64,6 +64,7 @@ android:
 before_install:
   - chmod +x gradlew
   - yes | sdkmanager "platforms;android-33" "build-tools;30.0.3"
+  - sudo apt-get install libstdc++6:i386 lib32z1
 
 script:
   - ./gradlew clean build
