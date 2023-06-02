@@ -20,7 +20,8 @@ android:
     #- sys-img-armeabi-v7a-android-22
  
 before_install:
-  - sdkmanager.bat --licenses
+  # - sdkmanager.bat --licenses
+   yes | sdkmanager "platforms;android-28"
   - chmod +x gradlew
 
 before_script:
