@@ -31,7 +31,6 @@ before_install:
 before_script:
  - chmod +x gradlew
 script:
-#  - echo "Building project...."
 #  - ./gradlew build
 #  - echo "Running all unit test..."
 #  - ./gradlew test
